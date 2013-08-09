@@ -84,6 +84,9 @@ on boot
     mkdir /dev/socket/blueooth 0770 bluetooth bluetooth
     chmod 2770 /dev/socket/bluetooth
 
+    # Allow QMUX daemon to assign port open wait time
+    chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
+
     setprop wifi.interface wlan0
 
     #Set SUID bit for usbhub
@@ -364,6 +367,12 @@ on property:ro.use_data_netmgrd=false
 # but only if ro.data.large_tcp_window_size property is set.
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
+
+on property:bluetooth.hciattach=true
+    setprop bluetooth.status on
+
+on property:bluetooth.hciattach=false
+    setprop bluetooth.status off
 
 service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     class late_start

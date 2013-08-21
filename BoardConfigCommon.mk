@@ -66,20 +66,16 @@ BLUETOOTH_HCI_USE_MCT := true
 
 # Wifi
 BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
-BOARD_HAVE_SAMSUNG_WIFI :=
 BOARD_HAS_QCOM_WLAN := true
-
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB :=
+BOARD_HOSTAPD_PRIVATE_LIB :=
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/prima_wlan.ko"
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/prima_wlan/parameters/fwpath"
 WIFI_DRIVER_MODULE_NAME := "prima_wlan"
 WIFI_DRIVER_MODULE_ARG :=
-WIFI_DRIVER_MODULE_AP_ARG :=
+WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/prima_wlan/parameters/fwpath"
 WIFI_DRIVER_FW_PATH_STA :=
 WIFI_DRIVER_FW_PATH_AP :=
 WIFI_DRIVER_FW_PATH_P2P :=
-
 
 # Disable initlogo, Samsungs framebuffer is weird
 TARGET_NO_INITLOGO := true
@@ -91,4 +87,3 @@ TARGET_NO_INITLOGO := true
 
 # Use Audience A2220 chip
 BOARD_HAVE_AUDIENCE_A2220 := true
-

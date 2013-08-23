@@ -25,7 +25,7 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/msm8960-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/gogh-common/include
 
 BOARD_VENDOR := samsung
 
@@ -76,16 +76,24 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/gogh-common/bluetooth
+BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/gogh-common/bluetooth
 
 # Wifi
-BOARD_WLAN_DEVICE := qcwcn
 BOARD_HAS_QCOM_WLAN := true
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/prima_wlan.ko"
-WIFI_DRIVER_MODULE_NAME := "prima_wlan"
-WIFI_DRIVER_FW_PATH_PARAM := "/sys/module/prima_wlan/parameters/fwpath"
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_SOFTAP_DEVICE := qcwcn 
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_MODULE_NAME :=  wlan
+WIFI_DRIVER_MODULE_PATH :=  "/system/lib/modules/wlan.ko"
+WIFI_DRIVER_FW_PATH_AP := "ap"
+WIFI_DRIVER_FW_PATH_STA := "sta"
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
 # NFC
 BOARD_HAVE_NFC := true
@@ -108,6 +116,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 # Camera
 COMMON_GLOBAL_CFLAGS += -DSAMSUNG_CAMERA_HARDWARE
 BOARD_CAMERA_USE_MM_HEAP := true
+BOARD_NEEDS_MEMORYHEAPPMEM := true
 
 # Workaround to avoid issues with legacy liblights on QCOM platforms
 TARGET_PROVIDES_LIBLIGHTS := true
@@ -115,6 +124,3 @@ TARGET_PROVIDES_LIBLIGHTS := true
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 BOARD_HAVE_SAMSUNG_AUDIO := true
-
-# Workaround for missing symbols in camera
-BOARD_NEEDS_MEMORYHEAPPMEM := true

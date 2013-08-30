@@ -642,3 +642,9 @@ service macloader /system/bin/macloader
     class main
     oneshot
 
+service thermald /system/bin/thermald
+    class main
+    user root
+    group root
+    disabled
+

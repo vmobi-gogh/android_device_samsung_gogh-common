@@ -83,6 +83,8 @@ vendor/firmware/libpn544_fw.so
 bin/geomagneticd
 bin/orientationd
 lib/hw/sensors.msm8960.so
+lib/libWakeUpSensory.so
+lib/libsensor_yamaha532_test.so
 
 # Camera
 bin/mm-qcamera-daemon

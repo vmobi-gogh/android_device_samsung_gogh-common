@@ -71,9 +71,14 @@ PRODUCT_PACKAGES += \
 
 # Media config / GPS config / QUIPC config
 PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/gogh-common/configs/gps.conf:system/etc/gps.conf \
-    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf
+    device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml 
+
+#    device/samsung/gogh-common/configs/gps.conf:system/etc/gps.conf \
+#    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf
+
+# APN
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/apns-conf.xml:system/etc/apns-conf.xml
 
 # Audio
 PRODUCT_PACKAGES += \

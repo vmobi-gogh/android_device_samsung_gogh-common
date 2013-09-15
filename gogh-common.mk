@@ -159,6 +159,10 @@ PRODUCT_PACKAGES += qrngd
 
 #common build.props
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.hfp.ver=1.6 \
+    ro.qualcomm.bt.hci_transport=smd \
+    ro.bluetooth.request.master=true \
+    ro.bluetooth.remote.autoconnect=true \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
     persist.radio.add_power_save=1 \

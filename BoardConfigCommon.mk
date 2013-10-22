@@ -29,12 +29,48 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/gogh-common/include
 
 BOARD_VENDOR := samsung
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
+# Architecture
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a9
+
 # inherit from common msm8960
 TARGET_BOARD_PLATFORM := msm8960
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
 
-# inherit from qcom-common
--include device/samsung/qcom-common/BoardConfigCommon.mk
+# Enable WEBGL in WebKit
+ENABLE_WEBGL := true
+
+# Flags
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+
+# Recovery
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/gogh-common/recovery/graphics.c
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
+# Graphics
+USE_OPENGL_RENDERER := true
+TARGET_USES_C2D_COMPOSITION := true
+TARGET_USES_ION := true
+BOARD_EGL_CFG := device/samsung/gogh-common/configs/egl.cfg
+
+# FM Radio
+#BOARD_HAVE_FM_RADIO := true
+#BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
+
+# Webkit
+TARGET_FORCE_CPU_UPLOAD := true
+
+# Charging mode
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
+BOARD_BATTERY_DEVICE_NAME := "battery"
 
 # Kernel
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom user_debug=31 zcache
@@ -79,7 +115,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/gogh-common/bluetooth
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/gogh-common/bluetooth
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true

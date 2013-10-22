@@ -59,37 +59,6 @@ PRODUCT_COPY_FILES += \
 	device/samsung/gogh-common/audio/snd_soc_msm_2x:system/etc/snd_soc_msm/snd_soc_msm_2x \
 	device/samsung/gogh-common/audio/audio_policy.conf:system/etc/audio_policy.conf
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    initlogo.rle \
-    init.bt.rc \
-    init.qcom.rc \
-    init.qcom.usb.rc \
-    init.target.rc \
-    ueventd.qcom.rc
-
-# Media config / GPS config / QUIPC config
-PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf  
-
-#    device/samsung/gogh-common/configs/gps.conf:system/etc/gps.conf \
-#    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf
-
-# APN
-PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/configs/apns-conf.xml:system/etc/apns-conf.xml
-
-# Audio
-PRODUCT_PACKAGES += \
-    alsa.msm8960 \
-    audio.a2dp.default \
-    audio_policy.msm8960 \
-    audio.primary.msm8960 \
-    libalsa-intf \
-    libaudioutils
-
 # init
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/init/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
@@ -124,6 +93,55 @@ PRODUCT_PACKAGES += \
     lpm.rc \
     ueventd.qcom.rc
 
+# GPS / quipc Configs
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/gps.conf:system/etc/gps.conf \
+    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf  
+
+# EGL config
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/egl.cfg:system/lib/egl/egl.cfg
+
+# Media config
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
+	device/samsung/gogh-common/configs/media_codecs.xml:system/etc/media_codecs.xml
+
+# APN config
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/apns-conf.xml:system/etc/apns-conf.xml
+
+# QCOM Display
+PRODUCT_PACKAGES += \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libqdutils \
+    libtilerenderer \
+    libI420colorconvert
+
+# Omx
+PRODUCT_PACKAGES += \
+    libdivxdrmdecrypt \
+    libmm-omxcore \
+    libOmxCore \
+    libstagefrighthw \
+    libOmxVdec \
+    libOmxVenc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc
+
+# Audio
+PRODUCT_PACKAGES += \
+    alsa.msm8960 \
+    audio.a2dp.default \
+    audio_policy.msm8960 \
+    audio.primary.msm8960 \
+    libalsa-intf \
+    libaudioutils
+
 # HAL
 PRODUCT_PACKAGES += \
     copybit.msm8960 \
@@ -132,7 +150,7 @@ PRODUCT_PACKAGES += \
     power.msm8960
 
 # Bluetooth
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
         hci_qcomm_init
 
 # GPS
@@ -146,6 +164,38 @@ PRODUCT_PACKAGES += \
     Nfc \
     Tag \
     com.android.nfc_extras
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    make_ext4fs \
+    e2fsck \
+    setup_fs
+
+# for bugmailer
+PRODUCT_PACKAGES += send_bug
+PRODUCT_COPY_FILES += \
+    system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
+    system/extras/bugmailer/send_bug:system/bin/send_bug
+
+# Init scripts
+#PRODUCT_PACKAGES += \
+    init.qcom.post_boot.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.sh \
+    init.qcom.class_core.sh \
+    init.qcom.class_main.sh \
+    init.qcom.syspart_fixup.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.mdm_links.sh \
+    init.qcom.modem_links.sh \
+    init.qcom.usb.sh \
+    lpm.rc \
+    init.qcom.lpm_boot.sh
+
+# Charger
+PRODUCT_PACKAGES += charger charger_res_images
+
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -194,6 +244,11 @@ PRODUCT_PACKAGES += qrngd
 
 #common build.props
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.hw=1 \
+    debug.egl.hw=1 \
+    debug.composition.type=dyn \
+    debug.mdpcomp.maxlayer=3 \
+    debug.mdpcomp.logs=0 \
     ro.bluetooth.hfp.ver=1.6 \
     ro.qualcomm.bt.hci_transport=smd \
     ro.bluetooth.request.master=true \
@@ -270,7 +325,7 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 DEVICE_PACKAGE_OVERLAYS += device/samsung/gogh-common/overlay
 
 # common msm8960
-$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
+#$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 

@@ -26,10 +26,5 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-
-#Create symbolic link for prima wlan module
-$(shell mkdir -p $(TARGET_OUT)/lib/modules; \
-        ln -sf /system/lib/modules/prima/prima_wlan.ko  \
-               $(TARGET_OUT)/lib/modules/wlan.ko)
 endif
 endif

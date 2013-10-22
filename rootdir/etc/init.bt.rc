@@ -1,9 +1,16 @@
 on boot
 
 # for bluetooth
-     insmod /system/lib/modules/btlock.ko
-     chmod 664 /dev/btlock
-     chown bluetooth system /dev/btlock
+#     insmod /system/lib/modules/btlock.ko
+#     chmod 664 /dev/btlock
+#     chown bluetooth system /dev/btlock
+
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+    class late_start
+    user bluetooth
+    group qcom_oncrpc bluetooth net_bt_admin system radio
+    disabled
+    oneshot
 
 service poke_helper /system/bin/brcm_poke_helper /dev/ttyHS0
     class main
@@ -19,8 +26,20 @@ service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm --no2
     oneshot
 
 # for bluetooth rf test.
-service bt_dut_cmd /system/bin/bcm_dut
+service bt_dut_cmd /system/bin/qcom_dut
+    group bluetooth net_bt_admin
     class main
+#    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service bt_audio_dut_cmd /system/bin/qcom_audio_dut
+    group bluetooth net_bt_admin
+    class main
+    disabled
+
+## LE 2 wired Test
+service LE_dut_cmd_on /system/bin/LE_dut --le_enable
     group bluetooth net_bt_admin
     disabled
     oneshot
@@ -35,6 +54,11 @@ service hciattach_le /system/bin/brcm_patchram_plus --enable_hci --no2bytes --to
     oneshot
 
 service LE_dut_cmd /system/bin/LE_dut
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service LE_dut_cmd_off /system/bin/LE_dut --le_disable
     group bluetooth net_bt_admin
     disabled
     oneshot

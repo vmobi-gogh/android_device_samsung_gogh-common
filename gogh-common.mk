@@ -90,6 +90,40 @@ PRODUCT_PACKAGES += \
     libalsa-intf \
     libaudioutils
 
+# init
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/init/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
+    device/samsung/gogh-common/init/init.goldfish.sh:system/etc/init.goldfish.sh \
+    device/samsung/gogh-common/init/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    device/samsung/gogh-common/init/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
+    device/samsung/gogh-common/init/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
+    device/samsung/gogh-common/init/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    device/samsung/gogh-common/init/init.qcom.mdm_links.sh:system/etc/init.qcom.mdm_links.sh \
+    device/samsung/gogh-common/init/init.qcom.modem_links.sh:system/etc/init.qcom.modem_links.sh \
+    device/samsung/gogh-common/init/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    device/samsung/gogh-common/init/init.qcom.post_fs.sh:system/etc/init.qcom.post_fs.sh \
+    device/samsung/gogh-common/init/init.qcom.thermald_conf.sh:system/etc/init.qcom.thermald_conf.sh \
+    device/samsung/gogh-common/init/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh  
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.class_core.sh \
+    init.qcom.class_main.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.lpm_boot.sh \
+    init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
+    initlogo.rle \
+    init.bt.rc \
+    init.carrier.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    init.trace.rc \
+    lpm.rc \
+    ueventd.qcom.rc
+
 # HAL
 PRODUCT_PACKAGES += \
     copybit.msm8960 \

@@ -220,7 +220,7 @@ esac
 # Post-setup services
 case "$target" in
     "msm8660" | "msm8960")
-        start mpdecision
+#        start mpdecision
     ;;
     "msm7627a")
         soc_id=`cat /sys/devices/system/soc/soc0/id`

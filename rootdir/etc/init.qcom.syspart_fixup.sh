@@ -61,8 +61,22 @@ if [ -f /system/etc/init.qcom.thermald_conf.sh ]; then
 fi
 
 # Run wifi script
+#if [ -f /system/etc/init.qcom.wifi.sh ]; then
+#  /system/bin/sh /system/etc/init.qcom.wifi.sh "$target" "$serial"
+#fi
+
+# Run wifi script
 if [ -f /system/etc/init.qcom.wifi.sh ]; then
-  /system/bin/sh /system/etc/init.qcom.wifi.sh "$target" "$serial"
+  /system/bin/sh /system/etc/init.qcom.wifi.sh 
+fi
+
+# Run BT scripts
+if [ -f /system/etc/init.ath3k.bt.sh ]; then
+  /system/bin/sh /system/etc/init.ath3k.bt.sh 
+fi
+
+if [ -f /system/etc/init.qcom.bt.sh ]; then
+  /system/bin/sh /system/etc/init.qcom.bt.sh 
 fi
 
 # This should be the last command

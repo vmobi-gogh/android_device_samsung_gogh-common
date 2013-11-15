@@ -77,8 +77,8 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
-    chmod 0660 /dev/ttyHS2
-    chown bluetooth bluetooth /dev/ttyHS2
+#    chmod 0660 /dev/ttyHS2
+#    chown bluetooth bluetooth /dev/ttyHS2
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/radio 0770 radio radio
@@ -178,8 +178,8 @@ on post-fs-data
     #mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-    write /dev/wcnss_wlan 1
-    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
+#    write /dev/wcnss_wlan 1
+#    write /sys/module/wcnss_ssr_8960/parameters/enable_riva_ssr 1
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
@@ -234,7 +234,12 @@ on post-fs-data
     chmod 0660 /data/hostapd/hostapd.conf
 
     # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
+#    mkdir /data/time/ 0700 system system
+
+#Apex
+    # Create /data/time folder for time-services
+    mkdir /data/time/ 0700 system system	# old one
+    mkdir /efs/time/ 0700 system system		# new one
 
     mkdir /data/bluetooth 0770 bluetooth bluetooth
     # Enable the setgid bit on the directory
@@ -272,8 +277,8 @@ service qcom-c_main-sh /system/bin/sh /init.qcom.class_main.sh
     user root
     oneshot
 
-on property:vold.decrypt=trigger_restart_framework
-    start qcom-c_main-sh
+#on property:vold.decrypt=trigger_restart_framework
+#    start qcom-c_main-sh
 
 service cnd /system/bin/cnd
     class late_start
@@ -381,11 +386,11 @@ on property:ro.use_data_netmgrd=false
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  1
 
-on property:bluetooth.hciattach=true
-    setprop bluetooth.status on
+#on property:bluetooth.hciattach=true
+#    setprop bluetooth.status on
 
-on property:bluetooth.hciattach=false
-    setprop bluetooth.status off
+#on property:bluetooth.hciattach=false
+#    setprop bluetooth.status off
 
 service btwlancoex /system/bin/sh /system/etc/init.qcom.coex.sh
     class late_start

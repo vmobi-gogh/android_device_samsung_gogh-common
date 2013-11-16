@@ -280,26 +280,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # keylayouts
 PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-    device/samsung/gogh-common/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
-    device/samsung/gogh-common/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
-	device/samsung/gogh-common/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
-	device/samsung/gogh-common/keylayout/fsa9485.kl:system/usr/keylayout/fsa9485.kl \
-	device/samsung/gogh-common/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
-	device/samsung/gogh-common/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
-	device/samsung/gogh-common/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
-	device/samsung/gogh-common/keylayout/sec_keys.kl:system/usr/keylayout/sec_keys.kl \
-	device/samsung/gogh-common/keylayout/sec_powerkey.kl:system/usr/keylayout/sec_powerkey.kl \
-	device/samsung/gogh-common/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-    device/samsung/gogh-common/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-    device/samsung/gogh-common/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-    device/samsung/gogh-common/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-    device/samsung/gogh-common/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-    device/samsung/gogh-common/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-    device/samsung/gogh-common/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
-    device/samsung/gogh-common/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
-    device/samsung/gogh-common/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-    device/samsung/gogh-common/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl
+     device/samsung/gogh-common/keylayout/Button_Jack.kl:system/usr/keylayout/Button_Jack.kl \
+     device/samsung/gogh-common/keylayout/ue_rf4ce_remote.kl:system/usr/keylayout/ue_rf4ce_remote.kl \
+     device/samsung/gogh-common/keylayout/samsung_remote_ir.kl:system/usr/keylayout/samsung_remote_ir.kl \
+     device/samsung/gogh-common/keylayout/keypad_8960_liquid.kl:system/usr/keylayout/keypad_8960_liquid.kl \
+     device/samsung/gogh-common/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
+     device/samsung/gogh-common/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
+     device/samsung/gogh-common/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
+     device/samsung/gogh-common/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
+     device/samsung/gogh-common/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
+     device/samsung/gogh-common/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
+     device/samsung/gogh-common/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
+     device/samsung/gogh-common/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
+     device/samsung/gogh-common/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
+     device/samsung/gogh-common/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
+     device/samsung/gogh-common/keylayout/sec_keys.kl:system/usr/keylayout/sec_keys.kl \
+     device/samsung/gogh-common/keylayout/sec_powerkey.kl:system/usr/keylayout/sec_powerkey.kl \
+     device/samsung/gogh-common/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
+     device/samsung/gogh-common/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
+     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
+     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
+     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
+     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
+     device/samsung/gogh-common/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
+     device/samsung/gogh-common/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
+     device/samsung/gogh-common/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
+     device/samsung/gogh-common/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl
 
 # Keychars
 PRODUCT_COPY_FILES += \

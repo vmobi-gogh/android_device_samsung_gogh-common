@@ -71,10 +71,6 @@ if [ -f /system/etc/init.qcom.wifi.sh ]; then
 fi
 
 # Run BT scripts
-if [ -f /system/etc/init.ath3k.bt.sh ]; then
-  /system/bin/sh /system/etc/init.ath3k.bt.sh 
-fi
-
 if [ -f /system/etc/init.qcom.bt.sh ]; then
   /system/bin/sh /system/etc/init.qcom.bt.sh 
 fi

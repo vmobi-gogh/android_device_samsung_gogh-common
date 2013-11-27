@@ -43,6 +43,8 @@ mount -o rw,remount,barrier=1 /system
 /system/bin/sh /system/etc/init.qcom.wifi.sh
 
 # Run BT scripts
+/system/bin/sh /system/etc/init.ath3k.bt.sh
+
 /system/bin/sh /system/etc/init.qcom.bt.sh
 
 # This should be the last command

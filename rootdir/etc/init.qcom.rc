@@ -85,8 +85,10 @@ on boot
     chmod 2770 /dev/socket/radio
     mkdir /dev/socket/audio 0770 media audio
     chmod 2770 /dev/socket/audio
-    mkdir /dev/socket/blueooth 0770 bluetooth bluetooth
+    mkdir /dev/socket/bluetooth 0770 bluetooth bluetooth
     chmod 2770 /dev/socket/bluetooth
+#     mkdir /dev/socket/gps 0770 gps gps
+#     chmod 2770 /dev/socket/gps
 
     # Allow QMUX daemon to assign port open wait time
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
@@ -101,8 +103,8 @@ on boot
     chmod 0755 /system/bin/ip
 
     #port-bridge
-    chmod 0660 /dev/smd0
-    chown system system /dev/smd0
+#    chmod 0660 /dev/smd0
+#    chown system system /dev/smd0
 
     #BT DUN port-bridge
     chmod 0660 /dev/smd7
@@ -206,6 +208,7 @@ on post-fs-data
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
     symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
+    symlink /dev/socket/wpa_wlan0 /data/system/wpa_supplicant/wlan0
 
     #Create directories for wiper services
     mkdir /data/wpstiles/ 0755 shell
@@ -330,12 +333,12 @@ on property:ro.emmc=1
 #    class main
 #    disabled
 
-#service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
-#     class late_start
-#     user bluetooth
-#     group system bluetooth net_bt_admin misc
-#     disabled
-#     oneshot
+service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
+     class late_start
+     user bluetooth
+     group system bluetooth net_bt_admin misc
+     disabled
+     oneshot
 
 service bridgemgrd /system/bin/bridgemgrd
     class late_start
@@ -364,8 +367,10 @@ service qmiproxy /system/bin/qmiproxy
 service qmuxd /system/bin/qmuxd
     class main
     user root
-    group radio log audio bluetooth qcom_diag
+    group radio audio bluetooth gps qcom_diag log
     disabled
+
+#    group radio log audio bluetooth qcom_diag
 
 service netmgrd /system/bin/netmgrd
     class main

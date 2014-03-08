@@ -143,3 +143,6 @@ lib/modules/prima/prima_wlan.ko
 # Perf
 lib/libqc-opt.so
 
+lib/libacdbloader.so
+lib/libaudioalsa.so
+

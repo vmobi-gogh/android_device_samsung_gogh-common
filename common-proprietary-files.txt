@@ -1,4 +1,5 @@
 # Bins
+bin/at_distributor
 bin/bridgemgrd
 bin/btnvtool
 bin/ds_fmc_appd

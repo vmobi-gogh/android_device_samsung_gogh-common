@@ -1,6 +1,7 @@
 #!/bin/sh
 
-set -e
+export DEVICE=goghvmu
+export VENDOR=samsung
 
 if [ $# -eq 0 ]; then
   SRC=adb
@@ -34,6 +35,21 @@ for FILE in `egrep -v '(^#|^$)' ../$DEVICE/device-proprietary-files.txt`; do
   fi
 done
 
+for FILE in `egrep -v '(^#|^$)' ../gogh-common/proprietary-files.txt`; do
+  echo "Extracting /system/$FILE ..."
+  DIR=`dirname $FILE`
+  if [ ! -d $BASE/$DIR ]; then
+    mkdir -p $BASE/$DIR
+  fi
+  if [ "$SRC" = "adb" ]; then
+    adb pull /system/$FILE $BASE/$FILE
+  else
+    cp $SRC/system/$FILE $BASE/$FILE
+  fi
+done
+
+BASE=../../../vendor/$VENDOR/gogh-common/proprietary
+rm -rf $BASE/*
 for FILE in `egrep -v '(^#|^$)' ../gogh-common/common-proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`

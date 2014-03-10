@@ -273,10 +273,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.emmc.sdcard.partition=17 \
     ro.use_data_netmgrd=true \
     persist.data_netmgrd_nint=16 \
-    lpa.decode=false \
-    rild.libpath=/system/lib/libril-qc-qmi-1.so \
+    lpa.decode=true \
+    rild.libpath=/system/lib/libril-qc-qmi-1.s \
     ril.subscription.types=NV,RUIM \
-    ro.telephony.ril.v3=skipnullaid
+    ro.yas.enable=true \
+    ro.yas_softiron.goghspr=true
 
 # keylayouts
 PRODUCT_COPY_FILES += \

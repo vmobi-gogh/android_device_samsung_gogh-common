@@ -140,7 +140,7 @@ lib/libwifiscanner.so
 lib/libwvdrm_L1.so
 lib/libwvm.so
 lib/libWVphoneAPI.so
-lib/libWVStreamControlAPI_L1.so
+lib/libWVStreamControlAPI_L3.so
 lib/modules/cfg80211.ko
 lib/modules/prima
 lib/modules/prima/cfg80211.ko

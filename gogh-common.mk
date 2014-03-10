@@ -62,7 +62,6 @@ PRODUCT_COPY_FILES += \
 # init
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/init/init.ath3k.bt.sh:system/etc/init.ath3k.bt.sh \
-    device/samsung/gogh-common/init/init.goldfish.sh:system/etc/init.goldfish.sh \
     device/samsung/gogh-common/init/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     device/samsung/gogh-common/init/init.qcom.coex.sh:system/etc/init.qcom.coex.sh \
     device/samsung/gogh-common/init/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh \
@@ -89,7 +88,6 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.target.rc \
-    init.trace.rc \
     lpm.rc \
     ueventd.qcom.rc
 
@@ -106,10 +104,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml \
 	device/samsung/gogh-common/configs/media_codecs.xml:system/etc/media_codecs.xml
-
-# APN config
-PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/configs/apns-conf.xml:system/etc/apns-conf.xml
 
 # QCOM Display
 PRODUCT_PACKAGES += \
@@ -288,8 +282,6 @@ PRODUCT_COPY_FILES += \
      device/samsung/gogh-common/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
      device/samsung/gogh-common/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
      device/samsung/gogh-common/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-     device/samsung/gogh-common/keylayout/AVRCP.kl:system/usr/keylayout/AVRCP.kl \
-     device/samsung/gogh-common/keylayout/Generic.kl:system/usr/keylayout/Generic.kl \
      device/samsung/gogh-common/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
      device/samsung/gogh-common/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
      device/samsung/gogh-common/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
@@ -297,28 +289,7 @@ PRODUCT_COPY_FILES += \
      device/samsung/gogh-common/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
      device/samsung/gogh-common/keylayout/sec_keys.kl:system/usr/keylayout/sec_keys.kl \
      device/samsung/gogh-common/keylayout/sec_powerkey.kl:system/usr/keylayout/sec_powerkey.kl \
-     device/samsung/gogh-common/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-     device/samsung/gogh-common/keylayout/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_028e.kl \
-     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c216.kl:system/usr/keylayout/Vendor_046d_Product_c216.kl \
-     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c294.kl:system/usr/keylayout/Vendor_046d_Product_c294.kl \
-     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c299.kl:system/usr/keylayout/Vendor_046d_Product_c299.kl \
-     device/samsung/gogh-common/keylayout/Vendor_046d_Product_c532.kl:system/usr/keylayout/Vendor_046d_Product_c532.kl \
-     device/samsung/gogh-common/keylayout/Vendor_04e8_Product_7021.kl:system/usr/keylayout/Vendor_04e8_Product_7021.kl \
-     device/samsung/gogh-common/keylayout/Vendor_054c_Product_0268.kl:system/usr/keylayout/Vendor_054c_Product_0268.kl \
-     device/samsung/gogh-common/keylayout/Vendor_05ac_Product_0239.kl:system/usr/keylayout/Vendor_05ac_Product_0239.kl \
-     device/samsung/gogh-common/keylayout/Vendor_22b8_Product_093d.kl:system/usr/keylayout/Vendor_22b8_Product_093d.kl
-
-# Keychars
-PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-    device/samsung/gogh-common/keychars/qwerty.kcm:system/usr/keychars/qwerty.kcm \
-    device/samsung/gogh-common/keychars/qwerty2.kcm:system/usr/keychars/qwerty2.kcm \
-    device/samsung/gogh-common/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm
-
-# IDC
-PRODUCT_COPY_FILES += \
-    device/samsung/gogh-common/idc/qwerty.idc:system/usr/idc/qwerty.idc \
-    device/samsung/gogh-common/idc/qwerty2.idc:system/usr/idc/qwerty2.idc
+     device/samsung/gogh-common/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl
 
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \

@@ -100,6 +100,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/configs/egl.cfg:system/lib/egl/egl.cfg
 
+# pans-conf
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/apns-conf.xml:system/etc/apns-conf.xml
+
 # Media config
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml \

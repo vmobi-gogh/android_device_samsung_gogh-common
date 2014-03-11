@@ -71,7 +71,7 @@ PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/init/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     device/samsung/gogh-common/init/init.qcom.post_fs.sh:system/etc/init.qcom.post_fs.sh \
     device/samsung/gogh-common/init/init.qcom.thermald_conf.sh:system/etc/init.qcom.thermald_conf.sh \
-    device/samsung/gogh-common/init/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh  
+    device/samsung/gogh-common/init/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -94,7 +94,7 @@ PRODUCT_PACKAGES += \
 # GPS / quipc Configs
 PRODUCT_COPY_FILES += \
     device/samsung/gogh-common/configs/gps.conf:system/etc/gps.conf \
-    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf  
+    device/samsung/gogh-common/configs/quipc.conf:system/etc/quipc.conf
 
 # EGL config
 PRODUCT_COPY_FILES += \
@@ -268,7 +268,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
     persist.data_netmgrd_nint=16 \
     lpa.decode=true \
-    rild.libpath=/system/lib/libril-qc-qmi-1.s \
+    rild.libpath=/system/lib/libril-qc-qmi-1.so \
     ril.subscription.types=NV,RUIM \
     ro.yas.enable=true \
     ro.yas_softiron.goghspr=true
@@ -282,7 +282,6 @@ PRODUCT_COPY_FILES += \
      device/samsung/gogh-common/keylayout/philips_remote_ir.kl:system/usr/keylayout/philips_remote_ir.kl \
      device/samsung/gogh-common/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
      device/samsung/gogh-common/keylayout/atmel_mxt_ts.kl:system/usr/keylayout/atmel_mxt_ts.kl \
-     device/samsung/gogh-common/keylayout/qwerty.kl:system/usr/keylayout/qwerty.kl\
      device/samsung/gogh-common/keylayout/cyttsp-i2c.kl:system/usr/keylayout/cyttsp-i2c.kl \
      device/samsung/gogh-common/keylayout/keypad_8960.kl:system/usr/keylayout/keypad_8960.kl \
      device/samsung/gogh-common/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \

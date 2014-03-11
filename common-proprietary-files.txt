@@ -34,16 +34,7 @@ bin/wdsdaemon
 bin/wiperiface_v02
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
-etc/firmware/a225_pfp.fw
-etc/firmware/a225_pm4.fw
 etc/firmware/a225p5_pm4.fw
-etc/firmware/a300_pfp.fw
-etc/firmware/a300_pm4.fw
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
-etc/firmware/vidc_1080p.fw
-etc/firmware/wcd9310/wcd9310_anc.bin
-etc/firmware/wcd9310/wcd9310_mbhc.bin
 etc/firmware/wcnss.b00
 etc/firmware/wcnss.b01
 etc/firmware/wcnss.b02
@@ -53,12 +44,9 @@ etc/firmware/wcnss.mdt
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
-etc/firmware/yamato_pfp.fw
-etc/firmware/yamato_pm4.fw
 etc/thermald-8960.conf
 etc/thermald.conf
 etc/wifi/wpa_supplicant.conf
-lib/drm/libdrmwvmplugin.so
 lib/egl/eglsubAndroid.so
 lib/egl/libEGL_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
@@ -69,6 +57,9 @@ lib/hw/camera.msm8960.so
 lib/hw/gps.default.so
 lib/hw/nfc.MSM8960.so
 lib/hw/sensors.msm8960.so
+lib/hw/camera.MSM8960.so
+lib/hw/gps.msm8960.so
+lib/hw/vendor-camera.msm8960.so
 lib/libalsa-intf.so
 lib/libatparser.so
 lib/libaudcal.so
@@ -95,6 +86,7 @@ lib/libdrmwvmplugin.so
 lib/libdsi_netctrl.so
 lib/libdsutils.so
 lib/libgemini.so
+lib/libfrsdk.so
 lib/libgps.utils.so
 lib/libgsl.so
 lib/libidl.so

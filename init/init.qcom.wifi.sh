@@ -148,7 +148,7 @@ case "$target" in
 
         # The property below is used in Qcom SDK for softap to determine
         # the wifi driver config file
-        setprop wlan.driver.config /data/misc/wifi/WCNSS_qcom_cfg.ini
+        setprop wlan.driver.config /system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
         # We need to make sure the WCNSS platform driver is running.
         # The WCNSS platform driver can either be built as a loadable
         # module or it can be built-in to the kernel.  If it is built

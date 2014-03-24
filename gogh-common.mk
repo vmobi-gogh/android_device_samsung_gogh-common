@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES += \
         device/samsung/gogh-common/audio/audio_policy.conf:system/etc/audio_policy.conf \
         device/samsung/gogh-common/audio/audio_effects.conf:system/etc/audio_effects.conf
 
+# media configuration
+PRODUCT_COPY_FILES += \
+    device/samsung/gogh-common/configs/media_profiles.xml:system/etc/media_profiles.xml
+
 # Keymaps
 PRODUCT_COPY_FILES += \
        device/samsung/gogh-common/keylayout/fsa9485.kl:system/usr/keylayout/fsa9485.kl \

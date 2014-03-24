@@ -70,6 +70,7 @@ PRODUCT_COPY_FILES += \
 
 # Keymaps
 PRODUCT_COPY_FILES += \
+       device/samsung/gogh-common/keylayout/sec_keypad.kl:system/usr/keylayout/sec_keypad.kl \
        device/samsung/gogh-common/keylayout/fsa9485.kl:system/usr/keylayout/fsa9485.kl \
        device/samsung/gogh-common/keylayout/msm8960-snd-card_Button_Jack.kl:system/usr/keylayout/msm8960-snd-card_Button_Jack.kl \
        device/samsung/gogh-common/keylayout/sec_key.kl:system/usr/keylayout/sec_key.kl \
@@ -95,7 +96,8 @@ PRODUCT_COPY_FILES += \
 # Keychars
 PRODUCT_COPY_FILES += \
        device/samsung/gogh-common/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
-       device/samsung/gogh-common/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm
+       device/samsung/gogh-common/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm \
+       device/samsung/gogh-common/keychars/sec_keypad.kcm:system/usr/keychars/sec_keypad.kcm
 
 # Needed to reset bootmode when leaving recovery
 PRODUCT_COPY_FILES += \

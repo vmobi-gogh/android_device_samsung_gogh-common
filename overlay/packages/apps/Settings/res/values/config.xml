@@ -15,7 +15,9 @@
 -->
 
 <resources>
-    <!-- LED Flashlight -->
+    <!-- LED Flashlight-->
     <bool name="has_led_flash">true</bool>
 
+    <!-- Volume Rocker Wake -->
+    <bool name="config_show_volumeRockerWake">true</bool>
 </resources>

@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+sleep 5
+hci_qcomm_init -b `cat /efs/bluetooth/bt_addr` -p 2
+

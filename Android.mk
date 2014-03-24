@@ -1,4 +1,3 @@
-
 #
 # Copyright (C) 2012 The Android Open-Source Project
 #
@@ -25,6 +24,8 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(BOARD_VENDOR),samsung)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
+ifneq ($(filter goghvmu goghspr,$(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
+endif
 endif
 endif

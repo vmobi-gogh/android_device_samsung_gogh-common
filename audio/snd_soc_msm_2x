@@ -876,11 +876,11 @@ SectionVerb
 	Name "HiFi Low PowerBT SCO Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -892,11 +892,11 @@ SectionVerb
 	Name "HiFi Low PowerBT SCO WB Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -1797,11 +1797,11 @@ SectionVerb
 	Name "HiFi TunnelBT SCO Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -1813,11 +1813,11 @@ SectionVerb
 	Name "HiFi TunnelBT SCO WB Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -2308,6 +2308,363 @@ SectionVerb
 
 EndSection
 }
+
+SectionUseCase."HiFi Lowlatency" {
+Comment "LowLatnecy mode playback use case"
+SectionVerb
+        Name "HiFi Lowlatency"
+
+        EnableSequence
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+        CapturePCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencySpeaker FM Tx"
+
+        EnableSequence
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyFM Tx"
+
+        EnableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyHDMI"
+
+        EnableSequence
+                'HDMI Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'HDMI Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyHDMI Speaker"
+
+        EnableSequence
+                'HDMI Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'HDMI Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyBT SCO Rx"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+
+SectionVerb
+        Name "HiFi LowlatencyBT SCO WB Rx"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+
+SectionVerb
+        Name "HiFi LowlatencyPROXY Tx"
+
+        EnableSequence
+        EndSequence
+
+        DisableSequence
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx Speaker"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx Earpiece"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx Headphones"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx ANC Headset"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx Speaker Headset"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi LowlatencyPROXY Rx Speaker ANC Headset"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+                'PRI_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+                'PRI_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        PlaybackPCM 10
+
+EndSection
+}
+SectionUseCase."HiFi Lowlatency Rec" {
+Comment "Recording use case"
+SectionVerb
+        Name "HiFi Lowlatency Rec"
+
+        EnableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi Lowlatency RecBT SCO Tx"
+
+        EnableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+SectionVerb
+        Name "HiFi Lowlatency RecBT SCO WB Tx"
+
+        EnableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi Lowlatency RecPROXY Rx"
+
+        EnableSequence
+        EndSequence
+
+        DisableSequence
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi Lowlatency RecPROXY Tx"
+
+        EnableSequence
+                'MultiMedia5 Mixer AFE_PCM_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer AFE_PCM_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionVerb
+        Name "HiFi Lowlatency RecSSR QMIC"
+
+        EnableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+}
+
 SectionDevice
 	Name "Earpiece"
 	Comment "Handset Rx device"
@@ -2480,6 +2837,7 @@ SectionDevice
     EffectsMixerCTL "SRS TruMedia"
 
 EndSection
+
 
 SectionDevice
     Name "Sub Mic"
@@ -2810,6 +3168,37 @@ SectionDevice
 EndSection
 
 SectionDevice
+    Name "Camcorder Tx"
+    Comment "Camcorder Tx device"
+
+    EnableSequence
+        'PRI_TX Channels':0:Two
+        'SLIM TX7 MUX':0:DEC3
+        'DEC3 MUX':0:ADC4
+        'ADC4 Volume':1:100
+        'SLIM TX8 MUX':0:DEC4
+        'DEC4 MUX':0:ADC3
+        'ADC3 Volume':1:100
+        'MICBIAS1 CAPLESS Switch':1:1
+    EndSequence
+
+    DisableSequence
+        'SLIM TX7 MUX':0:ZERO
+        'DEC3 MUX':0:ZERO
+        'ADC4 Volume':1:0
+        'SLIM TX8 MUX':0:ZERO
+        'DEC4 MUX':0:ZERO
+        'ADC3 Volume':1:0
+        'MICBIAS1 CAPLESS Switch':1:0
+    EndSequence
+
+    ACDBID  56:2
+
+    EffectsMixerCTL "SRS TruMedia"
+
+EndSection
+
+SectionDevice
 	Name "TTY Handset Analog Tx"
 	Comment "TTY Handset Analog Tx device"
 
@@ -2844,6 +3233,30 @@ SectionDevice
         'ADC3 Volume':1:100%
         'DEC4 Volume':2:67.7%
         'MICBIAS1 CAPLESS Switch':1:1
+    EndSequence
+
+    DisableSequence
+        'SLIM TX7 MUX':0:ZERO
+        'DEC4 MUX':0:ZERO
+        'ADC3 Volume':1:0
+        'MICBIAS1 CAPLESS Switch':1:0
+    EndSequence
+
+    ACDBID  54:2
+
+EndSection
+
+SectionDevice
+    Name "Voice Line"
+    Comment "Voice Speaker Tx device"
+
+    EnableSequence
+        'PRI_TX Channels':0:One
+        'SLIM TX7 MUX':0:DEC4
+        'DEC4 MUX':0:ADC3
+        'ADC3 Volume':1:100%
+        'DEC4 Volume':2:67.7%
+        'MICBIAS1 CAPLESS Switch':1:1
         'LINEOUT3 Volume':1:0%
         'TX3 HPF cut off':0:MIN_3DB_150Hz
         'TX4 HPF cut off':0:MIN_3DB_150Hz
@@ -2860,8 +3273,31 @@ SectionDevice
         'TX5 HPF cut off':0:MIN_3DB_4Hz
     EndSequence
 
-	ACDBID	4:2
-	EffectsMixerCTL "SRS TruMedia"
+    ACDBID  4:2
+
+EndSection
+
+SectionDevice
+    Name "Voice Recognition"
+    Comment "VR Main Mic Tx device"
+
+    EnableSequence
+        'PRI_TX Channels':0:One
+        'SLIM TX7 MUX':0:DEC4
+        'DEC4 MUX':0:ADC3
+        'ADC3 Volume':1:100%
+        'DEC4 Volume':2:67.7%
+        'MICBIAS1 CAPLESS Switch':1:1
+    EndSequence
+
+    DisableSequence
+        'SLIM TX7 MUX':0:ZERO
+        'DEC4 MUX':0:ZERO
+        'ADC3 Volume':1:0
+        'MICBIAS1 CAPLESS Switch':1:0
+    EndSequence
+
+    ACDBID  53:2
 
 EndSection
 
@@ -3036,42 +3472,63 @@ EndSection
 
 SectionDevice
 	Name "Speaker DMIC Endfire"
-	Comment "Dual MIC Endfire Tx device"
+	Comment "Call Main Mic Tx device"
+
+	EnableSequence
+		'PRI_TX Channels':0:One
+		'SLIM TX7 MUX':0:DEC4
+		'DEC4 MUX':0:ADC3
+		'ADC3 Volume':1:100%
+		'DEC4 Volume':2:67.7%
+		'MICBIAS1 CAPLESS Switch':1:1
+		'LINEOUT3 Volume':1:0%
+		'TX3 HPF cut off':0:MIN_3DB_150Hz
+		'TX4 HPF cut off':0:MIN_3DB_150Hz
+		'TX5 HPF cut off':0:MIN_3DB_150Hz
+	EndSequence
+
+	DisableSequence
+		'SLIM TX7 MUX':0:ZERO
+		'DEC4 MUX':0:ZERO
+		'ADC3 Volume':1:0
+		'MICBIAS1 CAPLESS Switch':1:0
+		'TX3 HPF cut off':0:MIN_3DB_4Hz
+		'TX4 HPF cut off':0:MIN_3DB_4Hz
+		'TX5 HPF cut off':0:MIN_3DB_4Hz
+	EndSequence
+
+	ACDBID	4:2
+
+EndSection
+
+SectionDevice
+    Name "Speaker DMIC Stereo"
+    Comment "Stereo Mic Tx device"
+
     EnableSequence
         'PRI_TX Channels':0:Two
-        'SLIM TX8 MUX':0:DEC2
-        'DEC2 MUX':0:ADC5
-        'ADC5 Volume':1:100%
-        'SLIM TX7 MUX':0:DEC4
+        'SLIM TX7 MUX':0:DEC3
+        'DEC3 MUX':0:ADC4
+        'ADC4 Volume':1:100
+        'SLIM TX8 MUX':0:DEC4
         'DEC4 MUX':0:ADC3
-        'ADC3 Volume':1:100%
+        'ADC3 Volume':1:100
         'MICBIAS1 CAPLESS Switch':1:1
-        'MICBIAS3 CAPLESS Switch':1:1
-        'LINEOUT3 Volume':1:100%
-        'DEC4 Volume':2:75.8%
-        'DEC2 Volume':2:75.8%
-        'TX3 HPF cut off':0:MIN_3DB_150Hz
-        'TX4 HPF cut off':0:MIN_3DB_150Hz
-        'TX5 HPF cut off':0:MIN_3DB_150Hz
     EndSequence
 
     DisableSequence
         'SLIM TX7 MUX':0:ZERO
-        'DEC2 MUX':0:ZERO
+        'DEC3 MUX':0:ZERO
+        'ADC4 Volume':1:0
         'SLIM TX8 MUX':0:ZERO
         'DEC4 MUX':0:ZERO
+        'ADC3 Volume':1:0
         'MICBIAS1 CAPLESS Switch':1:0
-        'MICBIAS3 CAPLESS Switch':1:0
-        'LINEOUT3 Volume':1:0%
-        'DEC4 Volume':2:67.7%
-        'DEC2 Volume':2:67.7%
-        'TX3 HPF cut off':0:MIN_3DB_4Hz
-        'TX4 HPF cut off':0:MIN_3DB_4Hz
-        'TX5 HPF cut off':0:MIN_3DB_4Hz
     EndSequence
 
-	ACDBID	55:2
-	EffectsMixerCTL "SRS TruMedia"
+    ACDBID  56:2
+
+    EffectsMixerCTL "SRS TruMedia"
 
 EndSection
 
@@ -3313,7 +3770,7 @@ SectionDevice
 	DisableSequence
 	EndSequence
 
-	ACDBID	0:1
+	ACDBID	10:1
 	EffectsMixerCTL "SRS TruMedia"
 
 EndSection
@@ -4310,11 +4767,11 @@ SectionModifier
 	Name "Play LPABT SCO Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4326,11 +4783,11 @@ SectionModifier
 	Name "Play LPABT SCO WB Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia3':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia3':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4376,11 +4833,11 @@ SectionModifier
 	Name "Capture MusicBT SCO Tx"
 
 	EnableSequence
-		'MultiMedia1 Mixer AUX_PCM_TX':1:1
+		'MultiMedia1 Mixer AUX_PCM_UL_TX':1:1
 	EndSequence
 
 	DisableSequence
-		'MultiMedia1 Mixer AUX_PCM_TX':1:0
+		'MultiMedia1 Mixer AUX_PCM_UL_TX':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4797,11 +5254,11 @@ SectionModifier
 	Name "Play TunnelBT SCO Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4813,11 +5270,11 @@ SectionModifier
 	Name "Play TunnelBT SCO WB Rx"
 
 	EnableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:1
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:1
 	EndSequence
 
 	DisableSequence
-		'"AUX_PCM_RX Audio Mixer MultiMedia4':1:0
+		'AUX_PCM_RX Audio Mixer MultiMedia4':1:0
 	EndSequence
 
 	# ALSA PCMs
@@ -4838,6 +5295,273 @@ SectionModifier
 
         # ALSA PCMs
         PlaybackPCM 9
+
+EndSection
+
+SectionModifier
+        Name "Capture Lowlatency Music"
+
+        EnableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Capture Lowlatency Music"
+
+        EnableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer SLIM_0_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+
+SectionModifier
+        Name "Capture Lowlatency MusicBT SCO Tx"
+
+        EnableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+SectionModifier
+        Name "Capture Lowlatency MusicBT SCO WB Tx"
+
+        EnableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:1
+        EndSequence
+
+        DisableSequence
+                'MultiMedia5 Mixer INTERNAL_BT_SCO_TX':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency Music"
+        Comment "Modifier for Lowlatency music playback"
+
+        EnableSequence
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicSpeaker FM Tx"
+        Comment "Modifier for Lowlatency music playback"
+
+        EnableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:1
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:0
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+
+SectionModifier
+        Name "Play Lowlatency MusicFM Tx"
+        Comment "Modifier for Lowlatency music playback on FM Tx"
+
+        EnableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_FM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicHDMI"
+        Comment "Modifier for music playback on HDMI"
+
+        EnableSequence
+                'HDMI Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'HDMI Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicHDMI Speaker"
+        Comment "Modifier for music playback on HDMI Speaker"
+
+        EnableSequence
+                'HDMI Mixer MultiMedia5':1:1
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'HDMI Mixer MultiMedia5':1:0
+                'SLIMBUS_0_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+EndSection
+SectionModifier
+        Name "Play Lowlatency MusicBT SCO Rx"
+        Comment "Modifier for music playback"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicBT SCO WB Rx"
+        Comment "Modifier for music playback"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicPROXY Rx"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicBT SCO Rx"
+        Comment "Modifier for music playback"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicBT SCO WB Rx"
+        Comment "Modifier for music playback"
+
+        EnableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'INTERNAL_BT_SCO_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
+
+EndSection
+
+SectionModifier
+        Name "Play Lowlatency MusicPROXY Rx"
+
+        EnableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:1
+        EndSequence
+
+        DisableSequence
+                'AFE_PCM_RX Audio Mixer MultiMedia5':1:0
+        EndSequence
+
+        # ALSA PCMs
+        CapturePCM 10
+        PlaybackPCM 10
 
 EndSection
 

@@ -34,7 +34,7 @@ for FILE in `egrep -v '(^#|^$)' ../$DEVICE/device-proprietary-files.txt`; do
 done
 
 LINEEND=" \\"
-COUNT=`wc -l ../d2-common/proprietary-files.txt | awk {'print $1'}`
+COUNT=`wc -l ../gogh-common/proprietary-files.txt | awk {'print $1'}`
 DISM=`egrep -c '(^#|^$)' ../gogh-common/proprietary-files.txt`
 COUNT=`expr $COUNT - $DISM`
 for FILE in `egrep -v '(^#|^$)' ../gogh-common/proprietary-files.txt`; do

@@ -43,7 +43,7 @@ ENABLE_WEBGL := true
 TARGET_PROVIDES_POWERHAL := true
 
 # chargers
-BOARD_CHARGER_RES := device/samsung/qcom-common/charger
+BOARD_CHARGER_RES := device/samsung/gogh-common/charger
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
